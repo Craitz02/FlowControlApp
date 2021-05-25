@@ -19,9 +19,16 @@ namespace FlowControlProject
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int edad = getEdad();//int.Parse(txtEdad.Text);
+            //ola
+            int edad = getEdad();
+            if (edad == int.MinValue)
+            {
+                MessageBox.Show("Error, edad no es valida.");
+                return;
+            }
             string category = cmbCategory.SelectedItem.ToString();
-            String Message = "";
+            
+            string Message = "No coinciden la edad y la categoria";
             switch (category)
             {
                 case "Baby":
