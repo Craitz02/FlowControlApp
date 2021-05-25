@@ -1,0 +1,10 @@
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\bin\Debug\FlowControlProject.exe.config
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\bin\Debug\FlowControlProject.exe
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\bin\Debug\FlowControlProject.pdb
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.csprojAssemblyReference.cache
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.Form1.resources
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.Properties.Resources.resources
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.csproj.GenerateResource.cache
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.csproj.CoreCompileInputs.cache
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.exe
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.pdb
