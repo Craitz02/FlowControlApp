@@ -55,6 +55,8 @@ namespace FlowControlProject
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(171, 20);
             this.txtEdad.TabIndex = 1;
+            this.txtEdad.Enter += new System.EventHandler(this.txtEdad_Enter);
+            this.txtEdad.Leave += new System.EventHandler(this.txtEdad_Leave);
             // 
             // btnAceptar
             // 
@@ -79,7 +81,6 @@ namespace FlowControlProject
             "Teen",
             "Adult",
             "Old"});
-            this.cmbCategory.SelectedIndex = 0;
             this.cmbCategory.Location = new System.Drawing.Point(78, 75);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(171, 21);

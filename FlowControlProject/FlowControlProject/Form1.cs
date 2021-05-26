@@ -20,10 +20,10 @@ namespace FlowControlProject
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             //ola
-            int edad = getEdad();
-            if (edad == int.MinValue)
+            int? edad = getEdad();
+            if (edad == null)
             {
-                MessageBox.Show("Error, edad no es valida.");
+                //MessageBox.Show("Error, edad no es valida.");
                 return;
             }
             string category = cmbCategory.SelectedItem.ToString();
@@ -32,31 +32,31 @@ namespace FlowControlProject
             switch (category)
             {
                 case "Baby":
-                    if(validateEdad(edad, 0, 4))
+                    if(validateEdad(edad?? 0, 0, 4))
                     {
                         Message = "You are a baby";
                     }
                     break;
                 case "Kids":
-                    if (validateEdad(edad, 5, 11))
+                    if (validateEdad(edad ?? 5, 5, 11))
                     {
                         Message = "You are a kid";
                     }
                     break;
                 case "Teen":
-                    if (validateEdad(edad, 12, 17))
+                    if (validateEdad(edad ?? 12, 12, 17))
                     {
                         Message = "You are a teen";
                     }
                     break;
                 case "Adult":
-                    if (validateEdad(edad, 18, 59))
+                    if (validateEdad(edad ?? 18, 18, 59))
                     {
                         Message = "You are an aldult person";
                     }
                     break;
                 case "Old":
-                    if (validateEdad(edad, 60, 120))
+                    if (validateEdad(edad ?? 60, 60, 120))
                     {
                         Message = "You are an old person";
                     }
@@ -67,7 +67,7 @@ namespace FlowControlProject
             
         }
 
-        private int getEdad()
+        private int? getEdad()
         {
             if (int.TryParse(txtEdad.Text, out int edad))
             {
@@ -83,6 +83,19 @@ namespace FlowControlProject
                 return true;
             }
             return false;
+        }
+
+        private void txtEdad_Enter(object sender, EventArgs e)
+        {
+            txtEdad.Text = "";
+        }
+
+        private void txtEdad_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEdad.Text))
+            {
+                txtEdad.Text = "Edad";
+            }
         }
     }
 
