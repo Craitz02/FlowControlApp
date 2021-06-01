@@ -10,3 +10,4 @@ C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\
 C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.pdb
 C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.Form2.resources
 C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.PnlActivoFijo.resources
+C:\Users\Sistemas-11\source\repos\Rodrigo\FlowControlProject\FlowControlProject\obj\Debug\FlowControlProject.FrmMdi.resources

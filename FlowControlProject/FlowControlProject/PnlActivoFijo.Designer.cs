@@ -45,10 +45,10 @@ namespace FlowControlProject
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvActivos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,12 +77,14 @@ namespace FlowControlProject
             // 
             // cmbMetodo
             // 
+            this.cmbMetodo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbMetodo.FormattingEnabled = true;
             this.cmbMetodo.Items.AddRange(new object[] {
             "Linea Recta",
             "SDA Incremental",
             "SDA Decremental"});
-            this.cmbMetodo.SelectedIndex = 0;
             this.cmbMetodo.Location = new System.Drawing.Point(120, 163);
             this.cmbMetodo.Name = "cmbMetodo";
             this.cmbMetodo.Size = new System.Drawing.Size(187, 21);
@@ -113,13 +115,6 @@ namespace FlowControlProject
             this.cmbTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Items.AddRange(new object[] {
-            "Edificio",
-            "Vehiculo",
-            "Mobiliario",
-            "Maquinaria",
-            "Equipo de Computo"});
-            this.cmbTipo.SelectedIndex = 0;
             this.cmbTipo.Location = new System.Drawing.Point(120, 109);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(187, 21);
@@ -204,7 +199,7 @@ namespace FlowControlProject
             this.label1.Location = new System.Drawing.Point(3, 16);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.label1.Size = new System.Drawing.Size(43, 28);0
+            this.label1.Size = new System.Drawing.Size(43, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo:";
             // 
@@ -229,6 +224,7 @@ namespace FlowControlProject
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnCalcular
             // 
@@ -240,23 +236,23 @@ namespace FlowControlProject
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
-            // dataGridView1
+            // dgvActivos
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvActivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 297);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(384, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActivos.Location = new System.Drawing.Point(13, 297);
+            this.dgvActivos.Name = "dgvActivos";
+            this.dgvActivos.Size = new System.Drawing.Size(384, 150);
+            this.dgvActivos.TabIndex = 2;
             // 
             // PnlActivoFijo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 451);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvActivos);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "PnlActivoFijo";
@@ -264,7 +260,7 @@ namespace FlowControlProject
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,6 +283,6 @@ namespace FlowControlProject
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.ComboBox cmbMetodo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvActivos;
     }
 }
