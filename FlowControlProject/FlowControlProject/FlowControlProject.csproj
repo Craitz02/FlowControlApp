@@ -64,6 +64,7 @@
     <Compile Include="FrmMdi.Designer.cs">
       <DependentUpon>FrmMdi.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\ActivoFijoModel.cs" />
     <Compile Include="PnlActivoFijo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +75,10 @@
     <Compile Include="poco\TipoActivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="util\depresiacion.cs" />
+    <Compile Include="Services\IDepreciacion.cs" />
+    <Compile Include="Services\LineaRecta.cs" />
+    <Compile Include="Services\SDADecremental.cs" />
+    <Compile Include="Services\SDAIncremental.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using FlowControlProject.poco;
+﻿using FlowControlProject.model;
+using FlowControlProject.poco;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,7 +10,7 @@ namespace FlowControlProject
 {
     public partial class PnlActivoFijo : Form
     {
-        private ActivoFijo[] activosFijo;
+        private ActivoFijoModel activoFijoModel;
         //List<ActivoFijo> activos;
         public PnlActivoFijo()
         {
@@ -26,33 +27,62 @@ namespace FlowControlProject
 
         private void ReadActivoFijo()
         {
-            string codigo = txtCodigo.Text;
-            string nombre = txtNombre.Text;
-            int index = cmbTipo.SelectedIndex;
-            TipoActivo tipo = (TipoActivo) Enum.GetValues(typeof(TipoActivo)).GetValue(index);
-            //TipoActivo tipo = index == 0 ? TipoActivo.Edificio :
-            //                  index == 1 ? TipoActivo.Vehiculo :
-            //                  index == 2 ? TipoActivo.Mobiliario :
-            //                  index == 3 ? TipoActivo.Maquinaria :
-            //                  TipoActivo.Equipo_Computo;
-
-            decimal.TryParse(txtValor.Text, out decimal valor);
-            decimal.TryParse(txtValorSalv.Text, out decimal valorsalv);
-
-            ActivoFijo af = new ActivoFijo()
+            try
             {
-                Codigo = codigo,
-                Nombre = nombre,
-                Tipo = tipo,
-                ValorActivo = valor,
-                ValorSalvamento = valorsalv,
+                string codigo = txtCodigo.Text;
+                string nombre = txtNombre.Text;
+                ValidateActivoFijo(codigo, nombre, out decimal valor, out decimal valorsalv);
+                int index = cmbTipo.SelectedIndex;
+                TipoActivo tipo = (TipoActivo)Enum.GetValues(typeof(TipoActivo)).GetValue(index);
+                //TipoActivo tipo = index == 0 ? TipoActivo.Edificio :
+                //                  index == 1 ? TipoActivo.Vehiculo :
+                //                  index == 2 ? TipoActivo.Mobiliario :
+                //                  index == 3 ? TipoActivo.Maquinaria :
+                //                  TipoActivo.Equipo_Computo;
 
-            };
+                
+                ActivoFijo af = new ActivoFijo()
+                {
+                    Codigo = codigo,
+                    Nombre = nombre,
+                    Tipo = tipo,
+                    ValorActivo = valor,
+                    ValorSalvamento = valorsalv,
 
-            activosFijo = AddElement(activosFijo, af);
-            MessageBox.Show("Activo agregado satisfactoriamente!!");
-            dgvActivos.DataSource = activosFijo;
+                };
+
+                activoFijoModel.Add(af);
+                MessageBox.Show("Activo agregado satisfactoriamente!!");
+                dgvActivos.DataSource = activoFijoModel.GetAll();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mnesaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
             
+        }
+
+        private void ValidateActivoFijo(string codigo,string nombre, out decimal valor,out decimal valorSalv)
+        {
+            if (string.IsNullOrWhiteSpace(codigo))
+            {
+                throw new ArgumentException("El codigo es requerido!");
+            }
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                throw new ArgumentException("El nombre es requerido!");
+            }
+            if (!decimal.TryParse(txtValor.Text, out decimal v))
+            {
+                throw new ArgumentException($"El valor \"{txtValor.Text}\" es invalido!");
+            }
+            valor = v;
+            if (!decimal.TryParse(txtValorSalv.Text, out decimal vs))
+            {
+                throw new ArgumentException($"El valor \"{txtValorSalv.Text}\" es invalido!");
+            }
+            valorSalv = vs;
         }
         public void loadTipoActivo()
         {
@@ -61,35 +91,12 @@ namespace FlowControlProject
                                        .ToArray());
 
             cmbTipo.SelectedIndex = 0;
+            activoFijoModel = new ActivoFijoModel();
         }
 
-        private ActivoFijo[] AddElement(ActivoFijo[] activos, ActivoFijo af)
-        {
-            if(activos == null)
-            {
-                activos = new ActivoFijo[1];
-                activos[0] = af;
-                return activos;
-            }
-            ActivoFijo[] temp = new ActivoFijo[activos.Length + 1];
-            Array.Copy(activos,temp, activos.Length);
-            temp[temp.Length - 1] = af;
+        
 
-            return temp;
-        }
-
-        private void txtCodigo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
-            {
-                txtCodigo.BackColor = Color.Pink;
-                e.Cancel = true;
-            }
-            else
-            {
-                txtCodigo.BackColor = Color.White;
-            }
-        }
+        
 
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -99,6 +106,17 @@ namespace FlowControlProject
             txtValor.Text = "";
             txtValorSalv.Text = "";
             cmbMetodo.SelectedIndex = 0;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvActivos.Rows.Count == 0)
+            {
+                return;
+            }
+            int index = dgvActivos.CurrentCell.RowIndex;
+            activoFijoModel.Remove(index);
+            dgvActivos.DataSource = activoFijoModel.GetAll();
         }
     }
 }

@@ -46,6 +46,7 @@ namespace FlowControlProject
             this.btnNew = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.dgvActivos = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).BeginInit();
@@ -114,6 +115,7 @@ namespace FlowControlProject
             // 
             this.cmbTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(120, 109);
             this.cmbTipo.Name = "cmbTipo";
@@ -146,7 +148,6 @@ namespace FlowControlProject
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(187, 20);
             this.txtCodigo.TabIndex = 5;
-            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // label5
             // 
@@ -210,6 +211,7 @@ namespace FlowControlProject
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnNew);
             this.flowLayoutPanel1.Controls.Add(this.btnCalcular);
+            this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 245);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -218,9 +220,9 @@ namespace FlowControlProject
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(301, 3);
+            this.btnNew.Location = new System.Drawing.Point(298, 3);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(80, 30);
+            this.btnNew.Size = new System.Drawing.Size(83, 32);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -228,9 +230,9 @@ namespace FlowControlProject
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(215, 3);
+            this.btnCalcular.Location = new System.Drawing.Point(209, 3);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(80, 30);
+            this.btnCalcular.Size = new System.Drawing.Size(83, 32);
             this.btnCalcular.TabIndex = 1;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -246,6 +248,16 @@ namespace FlowControlProject
             this.dgvActivos.Name = "dgvActivos";
             this.dgvActivos.Size = new System.Drawing.Size(384, 150);
             this.dgvActivos.TabIndex = 2;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(120, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(83, 32);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // PnlActivoFijo
             // 
@@ -284,5 +296,6 @@ namespace FlowControlProject
         private System.Windows.Forms.ComboBox cmbMetodo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvActivos;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
