@@ -13,7 +13,13 @@ namespace FlowControlProject.Services
             int factor = vidaUtil * (vidaUtil + 1) / 2;
             decimal[] dep = new decimal[vidaUtil];
 
-            
+            for (int i = 0, k = vidaUtil; i < vidaUtil; i++)
+            {
+                dep[i] = (valor - valorsalv) * k-- / factor;
+            }
+            return dep;
+
+
         }
     }
 }

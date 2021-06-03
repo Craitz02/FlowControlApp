@@ -67,6 +67,13 @@ namespace FlowControlProject.model
         {
             return activosFijo;
         }
+
+        public int GetGreaterVidaUtil()
+        {
+            return (int) activosFijo.OrderBy(a => a.TipoActivo)
+                                    .Reverse()
+                                    .FirstOrDefault().TipoActivo;
+        }
     }
 
     

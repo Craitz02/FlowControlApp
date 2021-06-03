@@ -32,6 +32,7 @@ namespace FlowControlProject
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.catalagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.depreciaciontoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuitemSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -51,6 +52,7 @@ namespace FlowControlProject
             // 
             this.catalagoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activoFijoToolStripMenuItem,
+            this.depreciaciontoolStripMenuItem1,
             this.toolStripSeparator1,
             this.menuitemSalir});
             this.catalagoToolStripMenuItem.Name = "catalagoToolStripMenuItem";
@@ -63,6 +65,13 @@ namespace FlowControlProject
             this.activoFijoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.activoFijoToolStripMenuItem.Text = "Activo Fijo";
             this.activoFijoToolStripMenuItem.Click += new System.EventHandler(this.activoFijoToolStripMenuItem_Click);
+            // 
+            // depreciaciontoolStripMenuItem1
+            // 
+            this.depreciaciontoolStripMenuItem1.Name = "depreciaciontoolStripMenuItem1";
+            this.depreciaciontoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.depreciaciontoolStripMenuItem1.Text = "Depreciacion";
+            this.depreciaciontoolStripMenuItem1.Click += new System.EventHandler(this.depreciaciontoolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
@@ -99,5 +108,6 @@ namespace FlowControlProject
         private System.Windows.Forms.ToolStripMenuItem activoFijoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuitemSalir;
+        private System.Windows.Forms.ToolStripMenuItem depreciaciontoolStripMenuItem1;
     }
 }

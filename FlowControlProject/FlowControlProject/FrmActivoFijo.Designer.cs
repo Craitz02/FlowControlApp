@@ -1,7 +1,7 @@
 ﻿
 namespace FlowControlProject
 {
-    partial class PnlActivoFijo
+    partial class FrmActivoFijo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,6 @@ namespace FlowControlProject
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbMetodo = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtValorSalv = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -45,8 +43,8 @@ namespace FlowControlProject
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
-            this.dgvActivos = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.dgvActivos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivos)).BeginInit();
@@ -57,8 +55,6 @@ namespace FlowControlProject
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cmbMetodo);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtValorSalv);
             this.groupBox1.Controls.Add(this.cmbTipo);
             this.groupBox1.Controls.Add(this.txtValor);
@@ -75,32 +71,6 @@ namespace FlowControlProject
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Activo";
-            // 
-            // cmbMetodo
-            // 
-            this.cmbMetodo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMetodo.FormattingEnabled = true;
-            this.cmbMetodo.Items.AddRange(new object[] {
-            "Linea Recta",
-            "SDA Incremental",
-            "SDA Decremental"});
-            this.cmbMetodo.Location = new System.Drawing.Point(120, 163);
-            this.cmbMetodo.Name = "cmbMetodo";
-            this.cmbMetodo.Size = new System.Drawing.Size(187, 21);
-            this.cmbMetodo.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(3, 156);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.label6.Size = new System.Drawing.Size(46, 28);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Método:";
             // 
             // txtValorSalv
             // 
@@ -169,7 +139,7 @@ namespace FlowControlProject
             this.label4.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.label4.Size = new System.Drawing.Size(79, 28);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Tipo de Activo:";
+            this.label4.Text = "TipoActivo de Activo:";
             // 
             // label3
             // 
@@ -238,6 +208,16 @@ namespace FlowControlProject
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(120, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(83, 32);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // dgvActivos
             // 
             this.dgvActivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -249,17 +229,7 @@ namespace FlowControlProject
             this.dgvActivos.Size = new System.Drawing.Size(384, 150);
             this.dgvActivos.TabIndex = 2;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(120, 3);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(83, 32);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // PnlActivoFijo
+            // FrmActivoFijo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +237,7 @@ namespace FlowControlProject
             this.Controls.Add(this.dgvActivos);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "PnlActivoFijo";
+            this.Name = "FrmActivoFijo";
             this.Text = "PnlActivoFijo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -293,8 +263,6 @@ namespace FlowControlProject
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnCalcular;
-        private System.Windows.Forms.ComboBox cmbMetodo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvActivos;
         private System.Windows.Forms.Button btnEliminar;
     }

@@ -10,14 +10,17 @@ namespace FlowControlProject.Services
     {
         public decimal[] CalcularDepreciacion(decimal valor, decimal valorsalv, int vidaUtil)
         {
-            decimal[] dep = new decimal[vidaUtil];
-            decimal d = (valor - valorsalv) / vidaUtil;
-            for(int i=0; i< dep.Length; i++)
-            {
-                dep[i] = d;
-            }
+            //decimal[] dep = new decimal[vidaUtil];
 
-            return dep;
+            decimal d = (valor - valorsalv) / vidaUtil;
+            return Enumerable.Repeat(d, vidaUtil).ToArray();
+
+            //for(int i=0; i< dep.Length; i++)
+            //{
+            //    dep[i] = d;
+            //}
+
+            //return dep;
         }
     }
 }

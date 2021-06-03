@@ -58,6 +58,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDepreciacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDepreciacion.Designer.cs">
+      <DependentUpon>FrmDepreciacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMdi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,16 +71,18 @@
       <DependentUpon>FrmMdi.cs</DependentUpon>
     </Compile>
     <Compile Include="model\ActivoFijoModel.cs" />
-    <Compile Include="PnlActivoFijo.cs">
+    <Compile Include="FrmActivoFijo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PnlActivoFijo.Designer.cs">
-      <DependentUpon>PnlActivoFijo.cs</DependentUpon>
+    <Compile Include="FrmActivoFijo.Designer.cs">
+      <DependentUpon>FrmActivoFijo.cs</DependentUpon>
     </Compile>
     <Compile Include="poco\ActivoFijo.cs" />
+    <Compile Include="poco\MetodoDepreciacion.cs" />
     <Compile Include="poco\TipoActivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DepreciacionFactory.cs" />
     <Compile Include="Services\IDepreciacion.cs" />
     <Compile Include="Services\LineaRecta.cs" />
     <Compile Include="Services\SDADecremental.cs" />
@@ -85,11 +93,14 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDepreciacion.resx">
+      <DependentUpon>FrmDepreciacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMdi.resx">
       <DependentUpon>FrmMdi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PnlActivoFijo.resx">
-      <DependentUpon>PnlActivoFijo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmActivoFijo.resx">
+      <DependentUpon>FrmActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

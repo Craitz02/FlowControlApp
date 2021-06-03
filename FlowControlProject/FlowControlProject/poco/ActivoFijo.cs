@@ -11,7 +11,7 @@ namespace FlowControlProject.poco
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public decimal ValorActivo { get; set; }
-        public TipoActivo Tipo { get; set; }
+        public TipoActivo TipoActivo { get; set; }
         public decimal ValorSalvamento { get; set; }
         
         //public string Codigo

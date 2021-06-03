@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace FlowControlProject
 {
-    public partial class PnlActivoFijo : Form
+    public partial class FrmActivoFijo : Form
     {
-        private ActivoFijoModel activoFijoModel;
+        public ActivoFijoModel ActivoFijoModel { get; set; }
         //List<ActivoFijo> activos;
-        public PnlActivoFijo()
+        public FrmActivoFijo()
         {
             InitializeComponent();
             loadTipoActivo();
@@ -45,15 +45,16 @@ namespace FlowControlProject
                 {
                     Codigo = codigo,
                     Nombre = nombre,
-                    Tipo = tipo,
+                    TipoActivo = tipo,
                     ValorActivo = valor,
                     ValorSalvamento = valorsalv,
 
                 };
 
-                activoFijoModel.Add(af);
+                ActivoFijoModel.Add(af);
+                dgvActivos.DataSource = ActivoFijoModel.GetAll();
                 MessageBox.Show("Activo agregado satisfactoriamente!!");
-                dgvActivos.DataSource = activoFijoModel.GetAll();
+                
             }
             catch(Exception ex)
             {
@@ -91,7 +92,6 @@ namespace FlowControlProject
                                        .ToArray());
 
             cmbTipo.SelectedIndex = 0;
-            activoFijoModel = new ActivoFijoModel();
         }
 
         
@@ -105,7 +105,6 @@ namespace FlowControlProject
             cmbTipo.SelectedIndex = 0;
             txtValor.Text = "";
             txtValorSalv.Text = "";
-            cmbMetodo.SelectedIndex = 0;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -115,8 +114,8 @@ namespace FlowControlProject
                 return;
             }
             int index = dgvActivos.CurrentCell.RowIndex;
-            activoFijoModel.Remove(index);
-            dgvActivos.DataSource = activoFijoModel.GetAll();
+            ActivoFijoModel.Remove(index);
+            dgvActivos.DataSource = ActivoFijoModel.GetAll();
         }
     }
 }
